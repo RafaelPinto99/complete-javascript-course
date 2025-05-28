@@ -167,5 +167,78 @@ if (friends.includes("Almeida")) {
     console.log("You do not have a friend called Almeida");
 }
 
-*/
 
+
+// Objects
+const rafael = {
+    firstName: "Rafael",
+    lastName: "Pinto",
+    age: 2025 - 1999,
+    job: "Student",
+    friends: ["Tomás", "Alex", "João"]
+};
+console.log(rafael);
+
+console.log(rafael.lastName);
+console.log(rafael["lastName"]);
+
+const nameKey = "Name";
+console.log(rafael["first" + nameKey]);
+console.log(rafael["last" + nameKey]);
+
+const interestedIn = prompt("What do you want to know about Rafael? Choose between firstName, lastName, age, job, and friends");
+
+
+if (rafael[interestedIn]) {
+    console.log(rafael[interestedIn]);
+} else {
+    console.log("Wrong request");
+}
+
+// Add keys and values
+rafael.location = "Portugal";
+rafael["twitter"] = "@xau_ok";
+
+// Challenge
+// "Rafael has 3 friends, and his best friend is called Alex"
+console.log(rafael.firstName + " has " + rafael.friends.length + " friends, and his best friend is called " + rafael.friends[1]);
+console.log(`${rafael.firstName} has ${rafael.friends.length} friends, and his best friend is called ${rafael.friends[1]}`);
+
+
+
+const rafael = {
+    firstName: "Rafael",
+    lastName: "Pinto",
+    birthYear: 1999,
+    job: "Student",
+    friends: ["Tomás", "Alex", "João"],
+    hasDriversLicense: false,
+
+    //calcAge: function (birthYear) { 
+    //    return 2025 - birthYear;
+    //}
+
+    //calcAge: function () {
+    //    console.log(this);
+    //    return 2025 - this.birthYear;
+    //}
+
+    calcAge: function () {
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()} year old ${this.job} and ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+    }
+};
+
+// console.log(rafael.calcAge());
+// console.log(rafael.age); // Need to calculate age first -rafael.calcAge()
+// console.log(rafael["calcAge"]());
+
+// Challenge
+// "Rafael is a 26 year old student and he has a driver's license"
+console.log(rafael.getSummary());
+
+*/
