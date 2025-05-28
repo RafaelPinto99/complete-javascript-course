@@ -97,7 +97,7 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 console.log(yearsUntilRetirement(1999, "Rafael"));
 console.log(yearsUntilRetirement(1950, "Bob"));
 
-
+// Arrays
 const friend1 = "Tomas";
 const friend2 = "Alex";
 const friend3 = "Edu";
@@ -136,4 +136,36 @@ console.log(age1, age2, age3);
 const ages = [age1, age2, age3];
 console.log(ages);
 
+// Add elements
+friends.push("Edu");
+console.log(friends);
+
+friends.unshift("Bruna");
+console.log(friends);
+
+// Remove elements
+friends.pop(); // Last - Edu gets removed
+friends.pop(); // New last - Joao gets removed
+console.log(friends);
+
+friends.shift(); // First - Bruna gets removed
+console.log(friends);
+
+console.log(friends.indexOf("Tomas"));
+console.log(friends.indexOf("Alex"));
+
+console.log(friends.includes("Tomas"));
+console.log(friends.includes("Bruna"));
+
+friends.push(23);
+console.log(friends.includes("23"));
+console.log(friends.includes(23));
+
+if (friends.includes("Almeida")) {
+    console.log("You have a friend called Almeida");
+} else {
+    console.log("You do not have a friend called Almeida");
+}
+
 */
+
