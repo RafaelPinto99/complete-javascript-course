@@ -241,4 +241,76 @@ const rafael = {
 // "Rafael is a 26 year old student and he has a driver's license"
 console.log(rafael.getSummary());
 
+
+// Loops
+// For loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++){
+    console.log(`Lifting weights repetion ${rep} 👌`);
+}
+
+
+
+const rafael = ["Rafael", "Pinto", 2025 - 1999, "Student",
+    ["Tomás", "Alex", "João"]];
+
+const types = [];
+
+for (let i = 0; i < rafael.length; i++){
+    // Reading from rafaelArray
+    console.log(rafael[i]);
+
+    // Filling typesArray
+    // types[i] = typeof rafael[i]
+    types.push(typeof rafael[i]);
+}
+
+console.log(types);
+
+const years = [1999, 2025, 1904, 2017];
+const ages = [];
+
+for (let i = 0; i < years.length; i++){
+    ages.push(2025 - years[i]);
+}
+
+console.log(ages);
+
+
+
+const rafael = ["Rafael", "Pinto", 2025 - 1999, "Student",
+    ["Tomás", "Alex", "João"]];
+
+// Continue
+console.log("--- ONLY STRINGS ---")
+for (let i = 0; i < rafael.length; i++){
+    if (typeof rafael[i] !== "string") continue;
+
+    console.log(rafael[i], typeof rafael[i]);
+}
+
+// Break
+console.log("--- BREAK WITH NUMBER ---")
+for (let i = 0; i < rafael.length; i++){
+    if (typeof rafael[i] === "number") break;
+
+    console.log(rafael[i], typeof rafael[i]);
+}
+
+
+
+const rafael = ["Rafael", "Pinto", 2025 - 1999, "Student",
+    ["Tomás", "Alex", "João"]];
+
+for (let i = rafael.length - 1; i >= 0; i--){
+    console.log(i, rafael[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++){
+    console.log(`------ Starting exercise ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++){
+        console.log(` Exercise ${exercise}: Lifting weight repition ${rep}`);
+    }
+}
+
 */
