@@ -205,6 +205,7 @@ restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name); 
 */
 
+/*
 // Destructuring
 
 // SPREAD, because on RIGHT side of =
@@ -240,3 +241,36 @@ add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
+*/
+
+/*
+// Use ANY data type, return ANY data type, short-circuiting
+console.log('---- OR ----');
+console.log(3 || 'Rafael');
+console.log('' || 'Rafael');
+console.log(true || 0);
+console.log(undefined || null); // null gets returned even though its falsey
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 0; // 0 counts as falsey
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('---- AND ----');
+console.log(0 && 'Rafael');
+console.log(7 && 'Rafael');
+
+console.log('Hello' && 23 && null && 'Rafael');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
+
