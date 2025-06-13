@@ -318,6 +318,23 @@ console.log(rest2);
 */
 
 /*
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+console.log(...menu);
+// for (const elem of menu) console.log(elem);
+
+// for (const elem of menu.entries()) {
+//   console.log(`${elem[0] + 1}: ${elem[1]}`);
+// }
+
+for (const [i, elem] of menu.entries()) {
+  console.log(`${i + 1}: ${elem}`);
+}
+*/
+
+
+
+/*
 // Coding Challenge #1
 We're building a football betting app (soccer for my American
 friends 😅)!
