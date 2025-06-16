@@ -22,6 +22,35 @@ const mexicanFoods = new Set([
   'garlic',
 ]);
 
+/*
+// There are more methods that were not used here. Check MDN
+// These new methods come form ES2025 meaning only the latest versions
+// of web browers support this
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log('Intersection: ');
+console.log([...commonFoods]);
+
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log('Union: ');
+console.log([...italianMexicanFusion]);
+
+console.log([...italianFoods, ...mexicanFoods]);
+console.log(new Set([...italianFoods, ...mexicanFoods]));
+console.log([...new Set([...italianFoods, ...mexicanFoods])]);
+
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+console.log('Difference: ');
+console.log(uniqueItalianFoods);
+console.log(uniqueMexicanFoods);
+
+const uniqueItalianAndMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+console.log(uniqueItalianAndMexicanFoods);
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods)); // false
+*/
+
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
@@ -395,6 +424,47 @@ for (const [day, { open, close }] of entries) {
 */
 
 /*
+// Sets are iterables just like arrays, however its elements are unique
+// and the order of elements in the set is irrelevant
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+// Strings are also iterables
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size); // array -> array.length
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Bread')); // false
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet); // Only on Garlic Bread is added
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)]; // new array with unique elems
+console.log(staffUnique);
+console.log(staffUnique.length);
+console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']));
+
+console.log(new Set('RafaelPinto').size);
+*/
+
+
+
+/*
 // Coding Challenge #1
 We're building a football betting app (soccer for my American
 friends 😅)!
@@ -542,6 +612,7 @@ as the value. In this game, it will look like this:
 GOOD LUCK 😀
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -613,3 +684,4 @@ for (const player of game.scored) {
   console.log(`After:`, scorers);
   console.log('---');
 }
+*/
