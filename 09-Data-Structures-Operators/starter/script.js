@@ -529,6 +529,166 @@ console.log([...question.values()]);
 */
 
 /*
+// Strings are immutable therefore cannot be modified
+// That rules out methods like push, pop, shift and splice
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r')); // space counts as a char
+
+console.log(airline.indexOf('Portugal')); // case sensitive
+
+console.log(airline.slice(4)); // position that the extraction starts
+console.log(airline.slice(4, 7)); // stops at 7-1 = 6
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2)); // starts from end
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  //const s = seat.pop(); // strings are immutable
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat');
+  } else console.log('You got lucky');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+// Boxing
+// Strings are converted to objects and then back to strings
+// The methods such as slice are called on objects
+// The process is called boxing because it takes the string and puts it into a box which is the object
+console.log(new String('Rafael'));
+console.log(typeof new String('Rafael'));
+console.log(typeof new String('Rafael').slice(1));
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'rAfAEL'; // We want Rafael
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower[0].toUpperCase()); // R
+console.log(passengerLower.slice(1)); // afael
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing emails
+const email = 'hello@rafael.io';
+const loginEmail = ' Hello@Rafael.io\n';
+
+const lowerEmail = loginEmail.toLocaleLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.'); // only replaces first appearence
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to barding door 23. Boarding door 23!';
+
+// Replace method is case sensitive
+console.log(announcement.replace('door', 'gate')); // only replaces first appearence
+console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate')); // /regular expression/global
+
+// Booleans
+const plane2 = 'Airbus A320neo';
+console.log(plane2.includes('A320'));
+console.log(plane2.includes('Boeing'));
+console.log(plane2.startsWith('Air'));
+
+if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+  console.log('Part of the NEW ARisbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else console.log('Welcome aborad!');
+};
+
+checkBaggage('I have a laptop, some foof and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+// Split and join
+console.log('a+very+nice+string'.split('+'));
+console.log('Rafael Pinto'.split(' '));
+
+const [firstName, lastName] = 'Rafael Pinto'.split(' ');
+const newName = [`Mr.`, firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  console.log(names);
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // same as above
+    console.log(n[0]);
+  }
+
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('rafael pinto');
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // converting to a string
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(43235437956837));
+console.log(maskCreditCard('92384478561208'));
+
+// Repeat
+const message2 = 'Bad weather... All departues delayed...\n';
+console.log(message2.repeat(3));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${`✈`.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+*/
+
+/*
 // Coding Challenge #1
 We're building a football betting app (soccer for my American
 friends 😅)!
@@ -775,6 +935,7 @@ some extra time).
 GOOD LUCK 😀
 */
 
+/*
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -810,3 +971,4 @@ for (const [minute, event] of gameEvents) {
   const half = minute <= 45 ? `FIRST` : `SECOND`;
   console.log(`[${half} HALF] ${minute}: ${event}`);
 }
+*/
