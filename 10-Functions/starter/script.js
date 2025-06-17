@@ -203,6 +203,33 @@ console.log(addVAT(23));
 */
 
 /*
+const runOnce = function () {
+  console.log("This won't run again");
+};
+runOnce();
+
+// IIFE
+(function () {
+  console.log("This won't run again");
+  const isPrivate = 23;
+})();
+
+// console.log(isPrivate);
+
+(() => console.log('This will also never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+
+// console.log(isPrivate);
+console.log(notPrivate);
+*/
+
+
+
+/*
 // Coding Challenge #1
  
 Let's build a simple poll app!
