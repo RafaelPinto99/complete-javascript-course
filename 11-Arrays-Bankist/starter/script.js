@@ -122,6 +122,7 @@ console.log('Rafael'.at(0));
 console.log('Rafael'.at(-1));
 */
 
+/*
 for (const [index, movement] of movements.entries()) {
   movement > 0
     ? console.log(`Movement ${index + 1}: You deposited ${movement}`)
@@ -134,3 +135,16 @@ movements.forEach(function (movement, index, array) {
     ? console.log(`Movement ${index + 1}: You deposited ${movement}`)
     : console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
 });
+*/
+
+/*
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${_}: ${value}`); // _ throw away variable
+});
+*/
+
