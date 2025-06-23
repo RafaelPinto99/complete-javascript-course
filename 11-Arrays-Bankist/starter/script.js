@@ -362,6 +362,32 @@ console.log(account);
 */
 
 /*
+// Find index method
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (
+    (inputCloseUsername,
+    value === currentAccount.username &&
+      Number(inputClosePin.value) === currentAccount.pin)
+  ) {
+    const index = accounts.findIndex(acc => acc.username === currentAccount);
+    console.log(index);
+
+    // Delete account
+    accounts.splice(index, 1);
+
+    // Hide UI
+    containerApp.style.opacity = 0;
+  }
+
+  inputCloseUsername.value = inputClosePin.value;
+});
+*/
+
+
+
+/*
 // Coding Challenge #1
 
 Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array
