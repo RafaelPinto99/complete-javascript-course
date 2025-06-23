@@ -439,6 +439,28 @@ console.log(movements.filter(deposit));
 */
 
 /*
+// Flat and flatmap methods
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8]; // 1 level deep
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8]; // goes 1 level deep
+console.log(arrDeep.flat(2)); // goes 2 levels deep
+
+// flat - can go more than one level deep
+const overallBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
+// flatMap - can only go one level deep no matter what
+const overallBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+*/
+
+/*
 // Coding Challenge #1
 
 Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array
