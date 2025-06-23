@@ -361,7 +361,21 @@ const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 */
 
-/*
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount / 10)) {
+    // Add movement
+    currentAccount.movements.push(amounts);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = inputClosePin.value = '';
+});
+
 // Find index method
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
@@ -383,7 +397,6 @@ btnClose.addEventListener('click', function (e) {
 
   inputCloseUsername.value = inputClosePin.value;
 });
-*/
 
 /*
 // Find last and find last index method
@@ -402,7 +415,28 @@ console.log(
 );
 */
 
+/*
+// Some and every methods
+console.log(movements);
 
+// EQUALITY
+console.log(movements.includes(-130)); // true
+
+// SOME: CONDITION
+console.log(movements.some(mov => mov === -130));
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
+
+// EVERY
+console.log(movements.every(mov => mov > 0)); // false
+console.log(account4.movements.every(mov => mov > 0)); // true
+
+// Seperate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
+*/
 
 /*
 // Coding Challenge #1
