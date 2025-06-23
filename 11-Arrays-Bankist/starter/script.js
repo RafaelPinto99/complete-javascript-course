@@ -385,6 +385,23 @@ btnClose.addEventListener('click', function (e) {
 });
 */
 
+/*
+// Find last and find last index method
+console.log(movements);
+const lastWithdrawal = movements.findLast(mov => mov < 0);
+console.log(lastWithdrawal);
+
+const latestLargeMovementIndex = movements.findLastIndex(
+  mov => Math.abs(mov) > 1000
+);
+console.log(latestLargeMovementIndex);
+console.log(
+  `Your latest large movement was ${
+    movements.length - latestLargeMovementIndex - 1
+  } movements ago`
+);
+*/
+
 
 
 /*
