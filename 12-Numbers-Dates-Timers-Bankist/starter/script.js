@@ -86,7 +86,7 @@ const formatMovementDate = function (date, locale) {
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
+  // console.log(daysPassed);
 
   if (daysPassed === 0) return 'Today';
   if (daysPassed === 1) return 'Yesterday';
@@ -233,7 +233,7 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
+  // console.log(currentAccount);
 
   if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
@@ -345,7 +345,7 @@ btnClose.addEventListener('click', function (e) {
     const index = accounts.findIndex(
       acc => acc.username === currentAccount.username
     );
-    console.log(index);
+    // console.log(index);
     // .indexOf(23)
 
     // Delete account
@@ -569,6 +569,7 @@ console.log(future);
 */
 
 // Operations with Dates
+/*
 const future = new Date(2037, 10, 19, 15, 23);
 console.log(+future);
 
@@ -580,3 +581,24 @@ const days1 = calcDaysPassed(
   new Date(2037, 3, 14, 10, 8)
 );
 console.log(days1);
+*/
+
+// Internationalizing Number (Intl)
+/*
+const num = 3884764.23;
+
+const options = {
+  style: 'currency',
+  unit: 'celsius',
+  currency: 'EUR',
+  // useGrouping: false;
+};
+
+console.log('US:        ', new Intl.NumberFormat('en-US', options).format(num));
+console.log('Germany:   ', new Intl.NumberFormat('de-DE', options).format(num));
+console.log('Syria:     ', new Intl.NumberFormat('ar-SY', options).format(num));
+console.log(
+  navigator.language,
+  new Intl.NumberFormat(navigator.language, options).format(num)
+);
+*/
