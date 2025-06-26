@@ -61,10 +61,12 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
     const html = `<div class="movements__row">
@@ -142,7 +144,7 @@ btnLogin.addEventListener('click', function (e) {
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) console.log('LOGIN');
   // Display UI and message
-  labelWelcome.textContent = `Welcome back ${
+  labelWelcome.textContent = `Welcome back, ${
     currentAccount.owner.split(' ')[0]
   }`;
   containerApp.style.opacity = 100;
@@ -186,7 +188,7 @@ btnLoan.addEventListener('click', function (e) {
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount / 10)) {
     // Add movement
-    currentAccount.movements.push(amounts);
+    currentAccount.movements.push(amount);
 
     // Update UI
     updateUI(currentAccount);
@@ -199,11 +201,12 @@ btnClose.addEventListener('click', function (e) {
   e.preventDefault();
 
   if (
-    (inputCloseUsername,
-    value === currentAccount.username &&
-      Number(inputClosePin.value) === currentAccount.pin)
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
   ) {
-    const index = accounts.findIndex(acc => acc.username === currentAccount);
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
     console.log(index);
 
     // Delete account
@@ -213,7 +216,14 @@ btnClose.addEventListener('click', function (e) {
     containerApp.style.opacity = 0;
   }
 
-  inputCloseUsername.value = inputClosePin.value;
+  inputCloseUsername.value = inputClosePin.value = '';
+});
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
@@ -460,7 +470,36 @@ const overallBalance2 = accounts
 console.log(overallBalance);
 */
 
+// Sorting arrays
+// Strings
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+console.log(owners);
 
+// Numbers
+console.log(movements);
+// console.log(movements.sort()); // sort works for strings
+
+// return < 0, A, B (keep order)
+// return > 0, B, A (switch order)
+
+// Ascending
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (b > a) return -1;
+// });
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+console.log(movements);
+
+// Descending
+// movements.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (b > a) return 1;
+// });
+movements.sort((a, b) => b - a);
+console.log(movements);
 
 /*
 // Coding Challenge #1
