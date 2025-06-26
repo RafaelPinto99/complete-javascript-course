@@ -251,6 +251,8 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+// Converting and Checking Numbers
 /*
 console.log(23 === 23.0);
 // Base 10 - 0 to 9     1/10 = 0.1   3/10 = 3.333333...
@@ -287,6 +289,8 @@ console.log(Number.isInteger(23.0));
 console.log(Number.isInteger(23 / 0));
 */
 
+// Math and Rounding
+/*
 console.log(Math.sqrt(25));
 console.log(25 ** (1 / 2));
 console.log(8 ** (1 / 3));
@@ -326,3 +330,35 @@ console.log((2.7).toFixed(0)); // returns string
 console.log((2.7).toFixed(3)); // returns string
 console.log((2.345).toFixed(2));
 console.log(+(2.345).toFixed(2)); // returns number due to "+"
+*/
+
+// The Remainder Operator
+/*
+console.log(5 % 2); // 1 resto (remainder)
+console.log(5 / 2); // 5 = 2 * 2 + 1 teorema do resto
+
+console.log(8 % 3); // 2 resto (remainder)
+console.log(8 / 3); // 8 = 2 * 3 + 2
+
+console.log(6 % 2);
+console.log(6 / 2);
+
+console.log(7 % 2);
+console.log(7 / 2);
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
+
+labelBalance,
+  addEventListener('click', function () {
+    [...document.querySelectorAll('.movements__row')].forEach(function (
+      row,
+      i
+    ) {
+      if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+      if (i % 3 === 0) row.style.backgroundColor = 'blue';
+    });
+  });
+*/
