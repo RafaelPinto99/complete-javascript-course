@@ -529,6 +529,7 @@ const groupedAccounts = Object.groupBy(accounts, ({ type }) => type);
 console.log(groupedAccounts);
 */
 
+/*
 // More creating and filling arrays
 const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(new Array(1, 2, 3, 4, 5, 6, 7));
@@ -560,6 +561,34 @@ labelBalance.addEventListener('click', function () {
 
   const movementsUI2 = [...document.querySelectorAll('.movements__value')];
 });
+*/
+
+/*
+// Non destructive alternatives
+// toReversed
+console.log(movements);
+// const reversedMov = movements.reverse(); // destructive
+// const reversedMov = movements.slice().reverse(); // = toReversed()
+const reversedMov = movements.toReversed();
+console.log(reversedMov);
+console.log(movements);
+
+// toSorted
+const sortedMov = movements.toSorted();
+console.log(sortedMov);
+
+// toSpliced
+const splicedMov = movements.toSpliced();
+console.log(splicedMov);
+
+// with
+// movements[1] = 2000;
+const newMovements = movements.copyWithin(1, 2000);
+console.log(newMovements);
+console.log(movements);
+*/
+
+
 
 /*
 // Coding Challenge #1
